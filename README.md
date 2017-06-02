@@ -17,13 +17,6 @@ The "game world" proves to be a good testing ground for applying search algorith
 * [Iterative deepening depth-first search](https://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search)
 * [A* search](https://en.wikipedia.org/wiki/A*_search_algorithm)
 
-## Table of contents
-  * [Theory](#Theory)
-  * [Implementation](#Implementation)
-  * [How do i run this code?](#Howdoirunthiscode)
-    * [Requirements](#Requirements)
-    * [Running the code](#Runningthecode)
-  * [Results](#Results)
 
 
 ## Theory
@@ -43,11 +36,17 @@ The game world is represented by a 2D grid. Every brick is a number. The example
 
 The following table describes the meaning of each value.
 | Value         | Description     |
+
 | :-----------: | :-------------- |
+
 | -1            | exit (goal)     |
+
 | 0             | empty field     |
+
 | 1             | wall            |
+
 | 2             | master brick    |
+
 | >2            | each of the other bricks|
 
 
@@ -140,16 +139,15 @@ To give a little more insight on runtimes, here are example runtimes for all alg
 It is also worth comparing the A* algorithm with both heuristic options, the Manhatten distance and the blocking heuristic. The following table compares the two heurstics for all levels.
 
 <p align="center">
-	<img src="doc/img/manhatten_vs_blocking_1.png" width="500">
+	<img src="doc/img/manhatten_vs_blocking_1.png" width="600">
 </p>
 
 Both heuristic functions output the optimal solution (length). The number of
 explored nodes and the time can be used to calculate the percentage of nodes reduced and the Speedup, respectively.
 
 <p align="center">
-	<img src="doc/img/manhatten_vs_blocking_2.png" width="500">
+	<img src="doc/img/manhatten_vs_blocking_2.png" width="400">
 </p>
 
 It is worth mentioning that the blocking heuristic does not provide a general Speedup of a fixed value. The best Speedup was measured for level2 at 10.61. In case of level10 the Speedup is almost non-existent, because the number of
 explored nodes could only be reduced by a few compared to the Manhatten distance.
-
