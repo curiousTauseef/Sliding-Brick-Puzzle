@@ -3,8 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# Microsoft word
+# Microsoft Word + Excel
 *.docx
+*.xlsx
 
 # User-specific files
 *.suo

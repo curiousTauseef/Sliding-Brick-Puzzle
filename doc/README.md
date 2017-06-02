@@ -3,7 +3,7 @@ The documentation describes implementation details.
 
 | Document      | Description     |
 | :-----------: | :-------------- |
-| doc1          | Matrix, random walk, Node, BFS, DFS, IDDFS |
+| doc1          | Matrix, Random walk, Node, BFS, DFS, IDDFS |
 | doc2          | CostNode, A*, Heuristic functions: Manhatten distance, blocking |
 
 ***Disclaimer**: Some of the class diagrams in the documentation are outdated,
