@@ -3,7 +3,7 @@ Solving a brick puzzle with different search algorithms
 
 ## Abstract
 This repository contains a C++ implementation of different search algorithms
-to solve a Sliding Brick Puzzle. The goal of the puzzle is to get the "Master brick" to the exit by shifting bricks around. The concept is illustrated in the image below.
+to solve a Sliding Brick Puzzle. The goal of the puzzle is to get the "master brick" to the exit by shifting bricks around. The concept is illustrated in the image below.
 
 <p align="center">
 	<img src="doc/img/SBP_example_colored_solved.png" width="500">
@@ -27,7 +27,7 @@ TODO
 TODO see doc/pdfs for more detailed descriptions!
 
 ## Implementation
-The game world is represented by a 2D grid. Every brick is a number. The example puzzle from above *(the Abstract chapter)* translates to the following. 
+The game world is represented by a 2D grid. Every brick is a number. The example puzzle from the Abstract translates to the following. 
 <p align="center">
 	<img src="doc/img/SBP_colored_numbers.png" width="500">
 </p>
@@ -44,16 +44,14 @@ The following table describes the meaning of each value.
 
 
 **Classes**
-* Search
-  * Encapsulates the search algorithms, functions to run them and
-    print their results
-* Node
-  * Represents a node in a tree. It holds the current state of the puzzle (Matrix) as well as a reference to it's parent node
-* CostNode
-  * Represents a node with a weight (cost) in a tree. The class is derived from
-    Node. The only extension is a member variable that holds the cost. This node is used for the A* search algorithm
-* Matrix
-  * Represents the state of a puzzle. It's width, height and all the cells values
+
+| Class         | Description     |
+| :-----------: | :-------------- |
+| Matrix        |Represents the state of a puzzle. It's width, height and all the cells values|
+| Node          | Represents a node in a tree. It holds the current state of the puzzle (Matrix) as well as a reference to it's parent node     |
+| CostNode      | Represents a node with a weight (cost) in a tree. The class is derived from Node. The only extension is a member variable that holds the cost. This node is used for the A* search algorithm            |
+| Search        | Encapsulates the search algorithms, functions to run them and print their results     |
+    
 
 The code is designed to be modular to add new algorithms without a hitch.
   
@@ -114,7 +112,6 @@ The actual moves that solve the level and hide behind the *length* parameter can
 ***Note**: the levels are not necessarily always increasing in difficulty with their number in the name  of the file!*
 
 A test run on `level1.txt` gives the following data.
-<p align="center">
 
 |        | BFS     | DFS     | IDDFS    | A* Manhatten | A* blocking |
 | :----: | :-----: | :-----: | :------: | :----------: | :---------: |
@@ -122,8 +119,8 @@ A test run on `level1.txt` gives the following data.
 | time   | 0.002   | 0.002   | 8.673    | 0.002        | 0.002       |
 | length | 16      | 60      | 16       | 16           | 16          |
 
-</p>
-The optimal solution length is 16, which every algorithm except for the **DFS** found. The DFS is a complete, but non-optimal search in this case. It is worth mentioning, that the **IDDFS** searches the most nodes, due to it's nature of always starting at the root node again after hitting the current depth limit. Therefore, the number of explored nodes contains many duplicates! Although this search is complete and optimal after all, the algorithm does not seem feasible for more complex levels. The **A\* blocking** algorithm yields the best results because it finds the optimal solution by exploring the fewest nodes in the process.
+The optimal solution length is 16, which every algorithm except for the __DFS__ found. The DFS is a complete, but non-optimal search in this case. It is worth mentioning, that the __IDDFS__ searches the most nodes, due to it's nature of always starting at the root node again after hitting the current depth limit. Therefore, the number of explored nodes contains many duplicates! Although this search is complete and optimal after all, the algorithm does not seem feasible for more complex levels. The __A*__ blocking algorithm yields the best results because it finds the optimal solution by exploring the fewest nodes in the process.
+
 
 To give a little more insight on runtimes, here are example runtimes for all algorithms for the first four levels. If not indicated otherwise, the runtime is denoted in seconds.
 
@@ -147,5 +144,6 @@ explored nodes and the time can be used to calculate the percentage of nodes red
 	<img src="doc/img/manhatten_vs_blocking_2.png" width="400">
 </p>
 
-It is worth mentioning that the blocking heuristic does not provide a general Speedup of a fixed value. The best Speedup was measured for level2 at 10.61. In case of level10 the Speedup is almost non-existent, because the number of
+The blocking heuristic does not provide a general Speedup of a fixed value. The best Speedup was measured for level2 at 10.61. In case of level10 the Speedup is almost non-existent, because the number of
 explored nodes could only be reduced by a few compared to the Manhatten distance.
+
