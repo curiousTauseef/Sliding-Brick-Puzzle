@@ -17,8 +17,6 @@ The "game world" proves to be a good testing ground for applying search algorith
 * [Iterative deepening depth-first search](https://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search)
 * [A* search](https://en.wikipedia.org/wiki/A*_search_algorithm)
 
-
-
 ## Theory
 It is assumed that the reader is familiar
 with the basic concepts of different search algorithms and terms like 
@@ -35,18 +33,13 @@ The game world is represented by a 2D grid. Every brick is a number. The example
 </p>
 
 The following table describes the meaning of each value.
+
 | Value         | Description     |
-
 | :-----------: | :-------------- |
-
 | -1            | exit (goal)     |
-
 | 0             | empty field     |
-
 | 1             | wall            |
-
 | 2             | master brick    |
-
 | >2            | each of the other bricks|
 
 
@@ -121,6 +114,7 @@ The actual moves that solve the level and hide behind the *length* parameter can
 *Note: the levels are not necessarily always increasing in difficulty with their number in the name  of the file!*
 
 A test run on `level1.txt` gives the following data.
+
 |        | BFS     | DFS     | IDDFS    | A* Manhatten | A* blocking |
 | :----: | :-----: | :-----: | :------: | :----------: | :---------: |
 | #nodes | 110     | 64      | 33038    | 93           | 88          |
@@ -129,6 +123,7 @@ A test run on `level1.txt` gives the following data.
 The optimal solution length is 16, which every algorithm except for the **DFS** found. The DFS is a complete, but non-optimal search in this case. It is worth mentioning, that the **IDDFS** searches the most nodes, due to it's nature of always starting at the root node again after hitting the current depth limit. Therefore, the number of explored nodes contains many duplicates! Although this search is complete and optimal after all, the algorithm does not seem feasible for more complex levels. The **A\* blocking** algorithm yields the best results because it finds the optimal solution by exploring the fewest nodes in the process.
 
 To give a little more insight on runtimes, here are example runtimes for all algorithms for the first four levels. If not indicated otherwise, the runtime is denoted in seconds.
+
 |        | BFS     | DFS     | IDDFS    | A* Manhatten | A* blocking |
 | :----: | :-----: | :-----: | :------: | :----------: | :---------: |
 | level0 | 0       | 0       | 0        | 0            | 0           |
@@ -139,15 +134,16 @@ To give a little more insight on runtimes, here are example runtimes for all alg
 It is also worth comparing the A* algorithm with both heuristic options, the Manhatten distance and the blocking heuristic. The following table compares the two heurstics for all levels.
 
 <p align="center">
-	<img src="doc/img/manhatten_vs_blocking_1.png" width="600">
+	<img src="doc/img/manhatten_vs_blocking_1.png" width="500">
 </p>
 
 Both heuristic functions output the optimal solution (length). The number of
 explored nodes and the time can be used to calculate the percentage of nodes reduced and the Speedup, respectively.
 
 <p align="center">
-	<img src="doc/img/manhatten_vs_blocking_2.png" width="400">
+	<img src="doc/img/manhatten_vs_blocking_2.png" width="500">
 </p>
 
 It is worth mentioning that the blocking heuristic does not provide a general Speedup of a fixed value. The best Speedup was measured for level2 at 10.61. In case of level10 the Speedup is almost non-existent, because the number of
 explored nodes could only be reduced by a few compared to the Manhatten distance.
+
