@@ -4,8 +4,8 @@ using namespace std;
 
 int main() {
 	Search search;
-	// run the first 4 level (0,1,2,3)
-	for (int i = 0; i < 4; i++) {
+	// run the first 2 level (0,1)
+	for (int i = 0; i < 2; i++) {
 		/* initialize a Matrix from a level textfile
 		 * when passing this Matrix to the search.run function,
 		 * a copy will be created inside the function so that the
