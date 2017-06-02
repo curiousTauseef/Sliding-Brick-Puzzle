@@ -1,4 +1,4 @@
-# Sliding Brick Puzzle
+ # Sliding Brick Puzzle
 Solving a brick puzzle with different search algorithms
 
 ## Abstract
@@ -12,21 +12,16 @@ to solve a Sliding Brick Puzzle. The goal of the puzzle is to get the "master br
 The "game world" proves to be a good testing ground for applying search algorithms and evaluating them.
 
 **Algorithms**
+* [Random walk](https://en.wikipedia.org/wiki/Random_walk)
 * [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
 * [Depth-first search](https://en.wikipedia.org/wiki/Depth-first_search)
 * [Iterative deepening depth-first search](https://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search)
 * [A* search](https://en.wikipedia.org/wiki/A*_search_algorithm)
 
-## Theory
-It is assumed that the reader is familiar
-with the basic concepts of different search algorithms and terms like 
-complete, optimal ..etc.
-
-TODO
-
-TODO see doc/pdfs for more detailed descriptions!
 
 ## Implementation
+***NOTE:** see /doc folder for a more detailed documentation!*
+
 The game world is represented by a 2D grid. Every brick is a number. The example puzzle from the Abstract translates to the following. 
 <p align="center">
 	<img src="doc/img/SBP_colored_numbers.png" width="500">
@@ -42,8 +37,7 @@ The following table describes the meaning of each value.
 | 2             | master brick    |
 | >2            | each of the other bricks|
 
-
-**Classes**
+The C++ code is mainly divided into four classes. The 2D grid for example is implemented in the class "Matrix". Find a list of all classes and their functionalities below.
 
 | Class         | Description     |
 | :-----------: | :-------------- |
@@ -53,7 +47,7 @@ The following table describes the meaning of each value.
 | Search        | Encapsulates the search algorithms, functions to run them and print their results     |
     
 
-The code is designed to be modular to add new algorithms without a hitch.
+The code is purposely designed to be modular to be able to add new algorithms without a hitch.
   
 ## How do i run this code?
 ### Requirements
@@ -146,4 +140,3 @@ explored nodes and the time can be used to calculate the percentage of nodes red
 
 The blocking heuristic does not provide a general Speedup of a fixed value. The best Speedup was measured for level2 at 10.61. In case of level10 the Speedup is almost non-existent, because the number of
 explored nodes could only be reduced by a few compared to the Manhatten distance.
-
