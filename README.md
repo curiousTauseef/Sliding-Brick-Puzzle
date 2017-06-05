@@ -138,5 +138,7 @@ explored nodes and the time can be used to calculate the percentage of nodes red
 	<img src="doc/img/manhatten_vs_blocking_2.png" width="400">
 </p>
 
-The blocking heuristic does not provide a general Speedup of a fixed value. The best Speedup was measured for level2 at 10.61. In case of level10 the Speedup is almost non-existent, because the number of
+The blocking heuristic does not provide a general Speedup of a fixed value. The best Speedup was measured for level2 at 10.61, because this level
+contains more zero cells than others. The blocking heuristic profits a lot from this!
+In case of level10 the Speedup is almost non-existent, because the number of
 explored nodes could only be reduced by a few compared to the Manhatten distance.
