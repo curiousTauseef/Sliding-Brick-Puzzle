@@ -9,7 +9,7 @@ to solve a Sliding Brick Puzzle. The goal of the puzzle is to get the "master br
 	<img src="doc/img/SBP_example_colored_solved.png" width="500">
 </p>
 
-The "game world" proves to be a good testing ground for applying search algorithms and evaluating them.
+The puzzle proved to be a good testing ground for applying search algorithms and evaluating them.
 
 **Algorithms**
 * [Random walk](https://en.wikipedia.org/wiki/Random_walk)
